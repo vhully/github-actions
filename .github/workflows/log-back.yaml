@@ -8,6 +8,14 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Set up Python
+        uses: actions/setup-python@master
+        with:
+          python-version: "3.x"
+
+      - name: Install pytest
+        run: pip install pytest
+
       - name: Push a file to our repository
         run: |
           pwd
